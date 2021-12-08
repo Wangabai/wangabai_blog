@@ -8,7 +8,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 // 路由列表
 const routes = [
   {
-    path: '/index',
+    path: '/',
     name: 'index',
     component: () => import('../views/index/index.vue'),
   },
