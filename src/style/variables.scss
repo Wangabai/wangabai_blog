@@ -1,0 +1,41 @@
+$fontFamily: "Helvetica Neue",
+Helvetica,
+"PingFang SC",
+"Hiragino Sans GB",
+"Microsoft YaHei",
+"微软雅黑",
+Arial,
+sans-serif;
+$textColor: #354268;
+$placeholderColor: #bfc5d1;
+$panelColor: #fff;
+$btnBg: #fff;
+// sidebar
+$menuText:rgba(255, 255, 255, 0.8);
+$menuActiveText:rgba(255, 255, 255);
+$subMenuActiveText:rgba(255, 255, 255); //https://github.com/ElemeFE/element/issues/12951
+$menuBg:rgba(243, 244, 251);
+$menuHover:hsla(0, 0%, 100%, .2);
+$subMenuBg:transparent;
+$subMenuHover:hsla(0, 0%, 100%, .2);
+$subMenuActive:hsla(0, 0%, 100%, .2);
+$popMenuBg: linear-gradient(to bottom, #4bafeb, #685ad1);
+$navBarHeight: 62px;
+$sideBarWidth: 190px;
+$primaryColor: #dcdfe6;
+// the :export directive is the magic sauce for webpack
+// https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
+:export {
+    fontFamily: $fontFamily;
+    menuText: $menuText;
+    menuActiveText: $menuActiveText;
+    subMenuActiveText: $subMenuActiveText;
+    menuBg: $menuBg;
+    menuHover: $menuHover;
+    subMenuBg: $subMenuBg;
+    subMenuHover: $subMenuHover;
+    popMenuBg: $popMenuBg;
+    navBarHeight: $navBarHeight;
+    sideBarWidth: $sideBarWidth;
+    primaryColor: $primaryColor;
+}

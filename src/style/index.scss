@@ -1,0 +1,158 @@
+@import './variables.scss';
+@import './element-variables.scss';
+@import './element-ui.scss';
+@import './mixin.scss';
+@import './transition.scss';
+@import './sidebar.scss';
+html {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-family: $fontFamily;
+}
+
+body[data-theme='dark'] {
+    background: #171c30;
+    color: $textColor;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+}
+
+div:focus {
+    outline: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+// 滚动条样式
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+
+/*定义滚动条轨道 内阴影+圆角*/
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    /*滚动条的背景区域的圆角*/
+    background-color: transparent;
+    /*滚动条的背景颜色*/
+}
+
+
+/*定义滑块 内阴影+圆角*/
+
+::-webkit-scrollbar-thumb {
+    background: #99a9bf;
+    border-radius: 20px;
+}
+
+// 单行文本溢出显示...
+.etc {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+
+/* 浮动及其清除 */
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.clearfix {
+    &:after {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: '';
+        clear: both;
+        height: 0;
+    }
+}
+
+/* 头部用户信息样式重置 */
+
+.hidden {
+    display: none !important;
+}
+
+.resetTop {
+    top: 48px !important;
+}
+
+// 灰色模式
+.html-grey {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: url('data:image/svg+xml;utf8,#grayscale');
+}
+
+// 色弱模式
+.html-weakness {
+    filter: invert(80%);
+    -webkit-filter: invert(80%);
+    -moz-filter: invert(80%);
+    -ms-filter: invert(80%);
+    -o-filter: invert(80%);
+}
+
+.pc-spacing {
+    margin: 10px;
+}
+
+.mobile-spacing {
+    margin: 0;
+}
+
+.tip-text {
+    color: #667eff;
+    cursor: pointer;
+}
+
+// 底部按钮样式
+.footer-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
