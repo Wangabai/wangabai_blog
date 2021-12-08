@@ -9,8 +9,8 @@ import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import viteCompression from 'vite-plugin-compression';
 // import styleImport from 'vite-plugin-style-import';
-import { viteMockServe } from 'vite-plugin-mock';
-import viteSvgIcons from 'vite-plugin-svg-icons';
+// import { viteMockServe } from 'vite-plugin-mock';
+// import viteSvgIcons from 'vite-plugin-svg-icons';
 
 const pathResolve = (dir: string): any => {
   return resolve(__dirname, '.', dir);
@@ -45,18 +45,18 @@ export default ({ mode }) =>
       //     },
       //   ],
       // }),
-      viteMockServe({
-        mockPath: 'mock',
-        localEnabled: mode === 'mock',
-        prodEnabled: false,
-        logger: true,
-      }),
-      viteSvgIcons({
-        // 指定需要缓存的图标文件夹
-        iconDirs: [resolve(process.cwd(), 'src/assets/svg-icons')],
-        // 指定symbolId格式
-        symbolId: 'icon-[name]',
-      }),
+      // viteMockServe({
+      //   mockPath: 'mock',
+      //   localEnabled: mode === 'mock',
+      //   prodEnabled: false,
+      //   logger: true,
+      // }),
+      // viteSvgIcons({
+      //   // 指定需要缓存的图标文件夹
+      //   iconDirs: [resolve(process.cwd(), 'src/assets/svg-icons')],
+      //   // 指定symbolId格式
+      //   symbolId: 'icon-[name]',
+      // }),
     ],
 
     // css配置
