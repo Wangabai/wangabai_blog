@@ -6,7 +6,7 @@
 <template>
   <div class="content">
     <p>欢迎来到王阿白的博客~</p>
-    测试下自动代码部署4
+    测试下自动代码部署5
     <CeShi></CeShi>
   </div>
 </template>
