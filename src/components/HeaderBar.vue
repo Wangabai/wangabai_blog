@@ -30,7 +30,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 export default defineComponent({
-  name: 'header',
+  name: 'headerBar',
   setup() {
     return {};
   },
@@ -44,7 +44,6 @@ export default defineComponent({
   background-color: #fff;
   padding: 4px;
   border-bottom: 1px solid #eee;
-  position: fixed;
   top: 0;
   text-align: center;
   :deep(.container) {

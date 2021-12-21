@@ -18,14 +18,17 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 export default defineComponent({
-  name: 'footer',
+  name: 'footerBar',
 });
 </script>
 <style lang="scss" scoped>
 .footer {
+  width: 100%;
   padding: 10px;
   font-size: 12px;
   text-align: center;
+  position: absolute;
+  bottom: 0;
   a {
     color: #1890ff;
   }
