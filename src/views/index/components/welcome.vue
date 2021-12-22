@@ -29,7 +29,12 @@
         </div>
       </div>
     </div>
-    <!-- <div class="show-web" v-if="showName"></div> -->
+    <div class="show-web" v-if="showName">
+      <div class="rotate-x-box">
+        <div class="box"></div>
+      </div>
+      <div class="click"><span class="click-span">点击进入</span></div>
+    </div>
   </div>
 </template>
 
@@ -106,42 +111,6 @@ export default defineComponent({
       -webkit-animation-delay: 1.8s;
     }
   }
-  .show-name {
-    width: 320px;
-    height: 20px;
-    font-size: 16px;
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
-    color: #51a9ff;
-    .join-web-name-box {
-      animation: translate-wname-join 1s linear forwards;
-    }
-    .web-name {
-      display: block;
-      animation: rotate-name-left 1s linear 1s forwards;
-      // -webkit-animation: rotate-name-left 1s linear forwards;
-    }
-    .web-name-box {
-      animation: translate-name-left 1s linear 2s forwards;
-    }
-    .join-user-name-box {
-      animation: translate-uname-join 1s linear forwards;
-    }
-    .user-name {
-      display: block;
-      animation: rotate-name-right 1s linear 1s forwards;
-    }
-    .user-name-box {
-      animation: translate-name-right 1s linear 2s forwards;
-    }
-    .line {
-      width: 2px;
-      height: 20px;
-      background-color: #51a9ff;
-      animation: line 1s linear 1s forwards;
-    }
-  }
   @keyframes load {
     0%,
     100% {
@@ -164,6 +133,48 @@ export default defineComponent({
       height: 20px;
       margin: -10px 0;
       background: lightblue;
+    }
+  }
+  .show-name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    height: 20px;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    color: #51a9ff;
+    .join-web-name-box {
+      opacity: 0;
+      animation: translate-wname-join 1s linear forwards;
+    }
+    .web-name {
+      display: block;
+      animation: rotate-name-left 1s linear 1s forwards;
+      // -webkit-animation: rotate-name-left 1s linear forwards;
+    }
+    .web-name-box {
+      animation: translate-name-left 1s linear 2s forwards;
+    }
+    .join-user-name-box {
+      opacity: 0;
+      animation: translate-uname-join 1s linear forwards;
+    }
+    .user-name {
+      display: block;
+      animation: rotate-name-right 1s linear 1s forwards;
+    }
+    .user-name-box {
+      animation: translate-name-right 1s linear 2s forwards;
+    }
+    .line {
+      width: 2px;
+      height: 20px;
+      background-color: #51a9ff;
+      animation: line 1s linear 2s forwards;
     }
   }
   @keyframes rotate-name-left {
@@ -215,7 +226,7 @@ export default defineComponent({
   @keyframes translate-wname-join {
     50% {
       transform: translateX(25px);
-      opacity: 0;
+      opacity: 0.5;
     }
     100% {
       transform: translateX(50px);
@@ -225,10 +236,90 @@ export default defineComponent({
   @keyframes translate-uname-join {
     50% {
       transform: translateX(-25px);
-      opacity: 0;
+      opacity: 0.5;
     }
     100% {
       transform: translateX(-50px);
+      opacity: 1;
+    }
+  }
+  .show-web {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .rotate-x-box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      animation: rotate-x-box 0.5s linear 3.5s forwards;
+      .box {
+        opacity: 0;
+        animation: line-box 0.5s linear 3s forwards;
+      }
+    }
+    .click {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      animation: click 0.5s linear 4s forwards;
+      text-align: center;
+      .click-span {
+        opacity: 0;
+        animation: click-span 0.5s linear 5s forwards;
+      }
+    }
+  }
+  @keyframes line-box {
+    0% {
+      width: 2px;
+      height: 20px;
+      background-color: #51a9ff;
+      opacity: 1;
+    }
+    100% {
+      width: 20px;
+      height: 20px;
+      background-color: #51a9ff;
+      transform: rotate(360deg);
+      opacity: 1;
+    }
+  }
+  @keyframes rotate-x-box {
+    0% {
+      opacity: 1;
+    }
+    99% {
+      opacity: 1;
+      transform: rotateX(360deg);
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes click {
+    0% {
+      width: 20px;
+      height: 20px;
+      background-color: #51a9ff;
+      opacity: 1;
+    }
+    100% {
+      width: 280px;
+      height: 30px;
+      border: 4px solid #51a9ff;
+      opacity: 1;
+    }
+  }
+  @keyframes click-span {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      color: #51a9ff;
+      cursor: pointer;
       opacity: 1;
     }
   }

@@ -7,8 +7,16 @@
   <HeaderBar></HeaderBar>
   <div class="content">
     <p>欢迎来到王阿白的博客~</p>
-    测试下自动代码部署9
-    <CeShi></CeShi>
+    <p>目前啥也没有</p>
+    <p>放张我儿子的照片压阵</p>
+    <img
+      style="cursor: pointer"
+      src="@/assets/myson.png"
+      v-if="showMySon"
+      @click="showMySon = false"
+    />
+    <p v-if="!showMySon">我也受不了了，谢谢你隐藏</p>
+    <p>注意：受不了了可以点击图片隐藏</p>
   </div>
   <FooterBar></FooterBar>
   <div class="welcome" v-if="status" @click="welcome">
@@ -19,6 +27,7 @@
 <script lang="ts">
 import { defineComponent, reactive, toRefs } from 'vue';
 import WelcomeLoading from './components/welcome.vue';
+
 export default defineComponent({
   name: 'IndexPage',
   components: {
@@ -27,6 +36,7 @@ export default defineComponent({
   setup() {
     const state = reactive({
       status: sessionStorage.getItem('welcome') || true,
+      showMySon: true,
     });
     // 判断是否第一次打开首页
     state.status = state.status === 'false' ? false : true;
