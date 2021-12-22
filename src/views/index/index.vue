@@ -1,6 +1,6 @@
 <!--
  * @Author: 王鑫
- * @Description: 测试路由
+ * @Description: 首页
  * @Date: 2021-11-17 10:45:14
 -->
 <template>
@@ -8,15 +8,15 @@
   <div class="content">
     <p>欢迎来到王阿白的博客~</p>
     <p>目前啥也没有</p>
-    <p>放张我儿子的照片压阵</p>
-    <img
+    <!-- <p>放张我儿子的照片压阵</p> -->
+    <!-- <img
       style="cursor: pointer"
       src="@/assets/myson.png"
       v-if="showMySon"
       @click="showMySon = false"
-    />
-    <p v-if="!showMySon">我也受不了了，谢谢你隐藏</p>
-    <p>注意：受不了了可以点击图片隐藏</p>
+    /> -->
+    <!-- <p v-if="!showMySon">我也受不了了，谢谢你隐藏</p> -->
+    <!-- <p>注意：受不了了可以点击图片隐藏</p> -->
   </div>
   <FooterBar></FooterBar>
   <div class="welcome" v-if="status" @click="welcome">
